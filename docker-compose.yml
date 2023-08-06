@@ -2,8 +2,8 @@ version: "3"
 
 services:
   hotreload:
-    image: 0xjuanda/angular_image_test
-    container_name: angular_server_container_test
+    #image: 0xjuanda/angular_image_test
+    #container_name: angular_server_container_test
     build:
       context: .
       dockerfile: Dockerfile.dev
