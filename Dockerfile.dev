@@ -1,0 +1,17 @@
+# Utilizamos la imagen Alpine más ligera de Node
+FROM node:18.17-alpine
+
+# Establecemos el directorio de trabajo dentro del contenedor
+WORKDIR /app
+
+# Copiamos primero solo el archivo de dependencias para aprovechar la caché de Docker
+COPY ./package*.json ./
+
+# Instalamos las dependencias
+RUN npm install
+
+# Copiamos todos los archivos de la aplicación al contenedor
+COPY . .
+
+# Ejecutamos el servidor de desarrollo al iniciar el contenedor
+CMD ["npm", "run", "start"] 

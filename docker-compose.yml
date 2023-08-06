@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  hotreload:
+    image: 0xjuanda/angular_image_test
+    container_name: angular_server_container_test
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
